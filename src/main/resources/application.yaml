@@ -1,0 +1,16 @@
+spring:
+  rabbitmq:
+    host: 47.106.233.16
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    listener:
+      simple:
+        acknowledge-mode: manual # 开启手动ack
+        prefetch: 10
+    publisher-confirm-type: correlated  #开启producer confirm机制，保证消息可以投递到交换机
+    publisher-returns: true #开启return 机制，保证交换机中的消息可以路由到队列
+
+
+
